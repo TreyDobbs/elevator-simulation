@@ -14,7 +14,6 @@
 
 int main(){
     srand (time(NULL));
-    //SET BUILDING STATS -- CHANGE THESE AS NECESSARY
     int numElevators = 3;
     int numFloors = 60;
     int arrivalRate = 25; //a rider arrives once every arrivalRate steps
