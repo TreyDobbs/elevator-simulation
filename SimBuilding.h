@@ -1,8 +1,5 @@
 // --------------------------------------------------------------------------
 // Name: Trey Dobbs
-// Course-Section: CS 255-01
-// Assignment: Project #7
-// Date Due: 12/2/2020
 // Description: This C++ project implements all the required pieces for the 
 // SimBuilding class to build a building elevator simulation. Creation of the
 // class constructor, the step method, and the printServiceStats() method are
@@ -78,13 +75,13 @@ class SimBuilding{
      * upward and on for those going downward. 
      *
      * Elevator is unloaded: the elevator rider whose destination is the 
-     * current floor is removed from elevator’s list
+     * current floor is removed from elevatorâ€™s list
      *
      * Elevator is Loaded: elevator loads riders to the elevator from the 
      * queue, if elevator direction is downward riders from down queue of 
-     * that floor are moved to elevator’s riders list and if elevator 
+     * that floor are moved to elevatorâ€™s riders list and if elevator 
      * direction is upward riders from up queue of that floor are moved into
-     * the elevator’s riders list
+     * the elevatorâ€™s riders list
      *
      * Elevator Move: on movement, floor number of elevator is incremented or
      * decremented based on the direction of the elevator
