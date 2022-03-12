@@ -20,7 +20,6 @@ class Elevator{
 	void move(int numFloors){
         //Elevators move in their current direction until they reach either the bottom floor or the top floor
         //from that point, they turn around and head in the opposite direction.
-        //cout<<"**On the Move: Floor "<<floorNum<<" : Headed:" << direction<<endl;
 		if(direction==1){
 			floorNum++;
 			if(floorNum==numFloors){direction=0;}
@@ -29,7 +28,6 @@ class Elevator{
 			floorNum--;
 			if(floorNum==1){direction=1;}
 		}
-		//cout<<"**Have Moved: Floor "<<floorNum<<" : Headed:" << direction<<endl;
 	}
 
 	void load(nodeType<Floor*>* flptr){
@@ -37,9 +35,7 @@ class Elevator{
         //current floor and adding them to the Elevator's list of Rider*s
 
 		//1. Find the current floor
-        //cout<<"**Trying to get to floorNum: "<<floorNum<<endl;
 		while(flptr->info->getFloorNum() != floorNum){
-            //cout<<"**Currently pointing at floorNum: "<<flptr->info->getFloorNum()<<endl;
 			if(flptr == nullptr){
 				cout<<"Ooof: Error1: end of list"<<endl;
 				break;
@@ -54,7 +50,6 @@ class Elevator{
 			rdrptr = flptr->info->leave(direction);
 			if(rdrptr!=nullptr){
                 //4. Add the rider * to the elevator list
-                //cout<<"Loaded Rider Stats(aT, dest, dir):"<<rdrptr->getArrivalTime()<<":"<<rdrptr->getDestFloor()<<":"<<rdrptr->getDirection()<<endl;
                 riders.insert(rdrptr);
                 numRiders++;
             }
@@ -80,12 +75,10 @@ class Elevator{
             nextRid = nullptr;
 		}
 
-		//cout<<"**Current Floor: "<<floorNum<<endl;
 		//For all riders on the elevator
 		while(nextRid != nullptr && numRiders>0){
 			//If this is the riders destination
 			if(nextRid->info->getDestFloor() == floorNum){
-                //cout<<"UnLoading Rider Stats(aT, dest, dir):"<<nextRid->info->getArrivalTime()<<":"<<nextRid->info->getDestFloor()<<":"<<nextRid->info->getDirection()<<endl;
                 //Add departing rider's wait time to ttl count for this floor
 				departArrTimeTTL += (stepcnt - nextRid->info->getArrivalTime());
 				//remove item from list
