@@ -27,7 +27,6 @@ class Floor{
 	void arrive(int step, int nF, int& ttlInTran){
         //if it's the correct step to have new riders arrive
 		if(step%arrivalRate==0){
-            //cout<<"**Rider arrived at floor "<<floorNum<<endl;
 			//a new rider arrives
 			Rider* newRid = new Rider(nF, step, floorNum);
 			//place the new Rider (pointer to Rider to be precise) in the correct queue based on direction
@@ -39,7 +38,6 @@ class Floor{
 				waitinglineUP->addQueue(newRid);
 				ttlInTran++;
 			}
-			//cout<<"New Rider Stats(aT, dest, dir):"<<newRid->getArrivalTime()<<":"<<newRid->getDestFloor()<<":"<<newRid->getDirection()<<endl;
 		}
 	}
 	//Function called (by Elevator) when it requests Riders (dir represents the requesting elevator's current direction)
